@@ -48,4 +48,4 @@ Options include OpenRouter, NVIDIA NIM, Kilo Gateway, OpenAI, Anthropic, Google 
 
 ## License
 
-You can use AllClip for free at home, at school, or at work. You can modify it and share copies for free under the same terms. Selling copies or including them in a paid product requires written permission. See [LICENSE](LICENSE).
+The [AllClip Use-Only License](LICENSE) allows free use of the official, unmodified software, including at school and at work. Modification, redistribution, repackaging, and sale require prior written permission, subject to applicable law and the hosting platform's terms. You can share the link to this repository or the official installer.

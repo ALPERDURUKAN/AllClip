@@ -1,7 +1,8 @@
 // ==UserScript==
 // @name         AllClip
 // @namespace    http://tampermonkey.net/
-// @version      3.0.1
+// @version      3.0.2
+// @license      AllClip Use-Only License 1.0; https://github.com/ALPERDURUKAN/AllClip/blob/main/LICENSE
 // @homepageURL  https://github.com/ALPERDURUKAN/AllClip
 // @supportURL   https://github.com/ALPERDURUKAN/AllClip/issues
 // @updateURL    https://raw.githubusercontent.com/ALPERDURUKAN/AllClip/main/AllClip.user.js
