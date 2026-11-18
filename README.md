@@ -1,31 +1,56 @@
-# AllClip
+<p align="center">
+  <img src="assets/allclip-logo.webp" alt="AllClip logo" width="112">
+</p>
 
-<img src="assets/allclip-logo.webp" alt="AllClip logo: a paperclip over stacked pages" width="104">
+<h1 align="center">AllClip</h1>
 
-Save a reference, collect sources for a project, or build a reading list. Capture a whole page, the main article, a text selection, or a single element. Each export includes the source URL and capture date.
+<p align="center"><strong>Save web pages, excerpts, and media in the format you need.</strong></p>
 
-**[Install AllClip](https://raw.githubusercontent.com/ALPERDURUKAN/AllClip/main/AllClip.user.js)**
+<p align="center">
+  <a href="https://raw.githubusercontent.com/ALPERDURUKAN/AllClip/main/AllClip.user.js"><img alt="Install AllClip" src="https://img.shields.io/badge/Install-AllClip-24C98A?style=for-the-badge"></a>
+  <a href="#-quick-start"><img alt="Quick start" src="https://img.shields.io/badge/Quick-start-324368?style=for-the-badge"></a>
+  <a href="https://github.com/ALPERDURUKAN/AllClip/issues"><img alt="Report an issue" src="https://img.shields.io/badge/Report-an%20issue-324368?style=for-the-badge"></a>
+</p>
 
-## Quick start
+<p align="center">For reading lists, research notes, course materials, and everyday references.</p>
+
+## ⚡ Quick start
 
 1. Install [Tampermonkey](https://www.tampermonkey.net/) or [Violentmonkey](https://violentmonkey.github.io/).
-2. Open the install link and confirm the installation in your userscript manager.
-3. Reload the page you want to capture. Select text and press **Ctrl+Shift+S**, or open the script menu to choose a capture mode. **Ctrl+Shift+A** lets you pick an element.
+2. Click [**Install AllClip**](https://raw.githubusercontent.com/ALPERDURUKAN/AllClip/main/AllClip.user.js) and confirm in your userscript manager.
+3. Reload the page. Highlight text and press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd>, or open the script menu for more capture options.
 
-If the install link shows code, copy it into a new script in your manager and save. If you use the earlier Universal Web Content Saver, disable it before using AllClip so both scripts do not handle the same shortcut. A new installation may require you to enter your AI settings again.
+> [!TIP]
+> If the install link opens as plain code, paste it into a new script in your userscript manager and save it. Disable the earlier Universal Web Content Saver if it still uses the same shortcuts.
 
-| For this task | Use this option |
+## ✂️ What you can capture
+
+| I want to save… | Use this |
 | --- | --- |
-| Save a passage for your notes | Select text and press **Ctrl+Shift+S**. |
-| Save the whole page or just its main article | Use **Save full page** or **Save main article** in the script menu. |
-| Keep text and available media together | Select **ZIP** in **Settings → Capture**. Extract the archive before opening `capture.html`. |
-| Keep a PDF or video with the source | Open **Save with media options** and choose which files to embed or download. |
+| A quote with its source | Highlight the passage and press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd>. |
+| A page or its main article | Choose **Save full page** or **Save main article** from the script menu. |
+| One figure, table, or page section | Press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>A</kbd> and pick the element. |
+| A PDF or a video alongside the page | Choose **Save with media options**. |
 
-## Exports and media
+Every export includes the source URL and capture date.
 
-Choose Markdown for notes, HTML for reading, JSON for structured data, or ZIP for local media files and a manifest. A selection saved as ZIP also includes the original selected text in `selection.txt`.
+## 📦 Choose an export format
 
-**Save with media options** can embed PDF bytes in a single HTML file, include a PDF as a local file in a ZIP, or insert a YouTube player in the HTML. Direct audio and video use the sources made available by the page. When the browser cannot retrieve a file, a ZIP records the reason and keeps the link. Streaming playlists are saved separately from their media segments.
+| Format | Use it for |
+| --- | --- |
+| **Markdown** | Notes, reading lists, and text editors |
+| **HTML** | Reading in a browser, with PDF or video embeds where available |
+| **JSON** | Structured data and a media inventory |
+| **ZIP** | HTML, Markdown, a manifest, and available local media files |
+
+Extract a ZIP before opening `capture.html`. Selection ZIPs also include the original text in `selection.txt`. The manifest explains why a media file remains a link if the browser cannot retrieve it.
+
+## 📄 PDFs and video
+
+In **Save with media options**, you can embed a PDF in one HTML file, store the PDF as a local file in a ZIP, or add an online YouTube player. For direct audio or video, choose among the sources published by the page. Streaming playlists can be saved as source files. The media segments stay outside the ZIP.
+
+<details>
+<summary><strong>Set up optional YouTube quality downloads</strong></summary>
 
 ### Optional YouTube downloads
 
@@ -40,11 +65,20 @@ On macOS or Linux, use `python3` in place of `py`. In **Save with media options 
 
 If a YouTube player gives error 153 when you open the local HTML directly, run `py -m http.server 8000 --bind 127.0.0.1` from the capture folder and open [http://127.0.0.1:8000](http://127.0.0.1:8000). The original video link is also in the export.
 
-## Optional AI titles and summaries
+</details>
 
-Open **Providers and models**, enter the provider API key if needed, and select a model. Add and reorder backup models under **Fallback order**. The catalog refreshes from each provider and supports filters for the fields that provider returns.
+## ✨ Optional AI titles and summaries
 
-Options include OpenRouter, NVIDIA NIM, Kilo Gateway, OpenAI, Anthropic, Google Gemini, Groq, local Ollama, and custom OpenAI-compatible endpoints. A fresh installation saves captures locally. When you enable AI, the script sends a sample of the captured text and media labels to the configured provider. If the configured models fail, capture still saves without an AI summary.
+Open **Providers and models**, add an API key if required, and choose a model. Use **Fallback order** to set which model runs next if a request fails. Search and filter the catalog using the fields each provider returns.
+
+**Providers.** OpenRouter, NVIDIA NIM, Kilo Gateway, OpenAI, Anthropic, Google Gemini, Groq, local Ollama, and custom OpenAI-compatible endpoints.
+
+> [!NOTE]
+> A fresh installation saves captures locally. When you enable AI, AllClip sends a sample of your captured text and media labels to the provider you configure. If all configured models fail, AllClip still saves the capture.
+
+## 💬 Feedback
+
+[Report a problem or request a feature](https://github.com/ALPERDURUKAN/AllClip/issues). Include your browser, userscript manager, and the steps to reproduce the issue. Use a public example page when possible.
 
 ## License
 
